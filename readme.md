@@ -68,7 +68,7 @@ https://documenter.getpostman.com/view/4549598/2sA3Bn6CX1
                +-----------------------------+  |  +-------------------------------+
                |        /api/v1/login        |  |  |       /api/v1/register        |
                |      (POST Method)          |  |  |     (POST Method)             |
-               |  Authentication Required    |  |  |   Public Access               |
+               |  Public Access              |  |  |   Public Access               |
                +-----------------------------+  |  +-------------------------------+
                                                 |
                                                 |
