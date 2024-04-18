@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5477:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  app:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      SERVER_HOST: localhost
+      SERVER_PORT: 8000
+      DB_SOURCE: postgres://ecommerce:ecommerce@db:5432/ecommerce?sslmode=disable
+      MIGRATION_URL: file://db/migration
+      SECRET_KEY: your_secret_key
+    depends_on:
+      - db
+    networks:
+        - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db_data:
