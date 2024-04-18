@@ -86,7 +86,7 @@ https://documenter.getpostman.com/view/4549598/2sA3Bn6CX1
                                                  |
               +--------------------------------+ |  +--------------------------------+
               |  /api/v1/products              | |  |  /api/v1/products/{id}         |
-              |   (POST Method)                | |  |  (PUT Method)                  |
+              |   (POST Method)                | |  |  (DELETE Method)               |
               |  Authentication Required       | |  |  Authentication Required       |
               |  Access Level: 1               | |  |  Access Level: 2               |
               +--------------------------------+ |  +--------------------------------+
